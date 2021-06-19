@@ -1,0 +1,30 @@
+.logos {
+    text-align: center;
+    position: relative;
+    display: block;
+    width: 690px;
+    height: 200px;
+    background-image: url('../img/05_logos-holder.png');
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    padding-top: 4.5rem;
+
+    @include respond(medium) {
+        background-image: none;
+        width: auto;
+        height: auto;
+    }
+    
+    &__title {
+   		font-size: 2.4rem;
+		letter-spacing: .5rem;
+		color: $color-dark;
+		text-transform: uppercase;
+		margin-bottom: 30px;
+    }
+
+    & img {
+        width: 75%;
+        
+    }
+}

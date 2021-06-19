@@ -1,0 +1,71 @@
+.testimonials__glide {
+	min-height: 80rem;
+	position: relative;
+	background: rgba(#1b1f0a, .6);
+	padding-bottom: 12rem;
+	
+	& .glide__track,
+	& .glide__slides {
+		height: 100%;
+	}
+
+	&__slide {
+		text-align: center;
+		padding-top: 4rem;
+		height: 100%;
+		padding-top: 26rem;
+		opacity: 0;
+		transition: opacity 1s linear;
+	}
+
+	&__arrows {
+		position: absolute;
+		left: 50%;
+		bottom: 0;
+		transform: translateX(-50%);
+		
+		@include respond(smaller) {
+           display: flex;
+           justify-content: space-between;
+           width: 100%;
+        }
+	}
+
+	&__arrow {
+		width: 13rem;
+		height: 9.6rem;
+		border-top: 1px solid $color-white;
+		border-left: 1px solid $color-white;
+		transition: background-color .5s ease;
+		
+		& img {
+			width: 40px;
+			height: 22px;
+		}
+
+		&--right {
+			border-right: 1px solid $color-white;
+			transform: translateX(-3px);
+		}
+
+		.hasHover &:hover {
+			background-color: rgba($color-coral, .8);
+		}
+
+		@include respond(smaller) {
+			display: block;
+           	height: 6rem;
+           	max-width: 18rem;
+           	width: 50%;
+           	transform: translateX(0);
+           	
+           	&--left {
+				border-right: 1px solid $color-white;
+			}
+        }
+	}
+
+	& .glide__slide--active {
+		opacity: 1;
+	}
+}

@@ -1,0 +1,28 @@
+.btn {
+    display: inline-block;
+    height: 7rem;
+    border: 1px solid;
+    font-size: 2rem;
+    font-weight: 400;
+    color: $color-white;
+    padding-left: 4rem;
+    padding-right: 10rem;
+    text-transform: uppercase;
+    position: relative;
+    transition: all .3s ease;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        width: 4.5rem;
+        height: 1px;
+        background-color: $color-whitely;
+        right: 4rem;
+        top: 50%;
+    }
+
+    .hasHover &:hover {
+        transform: scaleX(1.05);
+        background-color: rgba($color-coral, .8);
+    }
+}

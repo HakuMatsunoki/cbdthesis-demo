@@ -1,0 +1,27 @@
+.socials {
+	width: 190px;
+	padding-bottom: 10rem;
+	position: relative;
+	display: inline-flex;
+	justify-content: space-between;
+	
+	.hasHover &__social:hover img {
+		animation: rotate 1s linear;
+	}
+	
+	&__social {
+		width: 3rem;
+		display: inline-block;
+	}
+
+	&::after {
+		position: absolute;
+		content: '';
+		background-color: $color-primary;
+		width: 2px;
+		height: 5.5rem;
+		left: 50%;
+		transform: translateX(-50%);
+		top: 6rem;
+	}
+}

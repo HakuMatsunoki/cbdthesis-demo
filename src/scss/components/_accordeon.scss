@@ -1,0 +1,96 @@
+.accordeon {
+	width: 57rem;
+	@include centered;
+	padding-bottom: 10rem;
+	
+	@include respond(medium) {
+        width: 70%;
+    }
+
+    @include respond(small) {
+        width: 100%;
+        @include small-padding;
+        padding-bottom: 0;
+    }
+	
+	&__tab {
+		border-top: 1px solid #eaedde;
+				
+		&:last-child {
+			border-bottom: 1px solid #eaedde;
+		}
+
+
+
+		&__title {
+			font-size: 1.8rem;
+			letter-spacing: 5px;
+			line-height: 7.5rem;
+			color: $color-primary;
+			font-weight: 300;
+			cursor: pointer;
+			position: relative;
+			padding-left: 4rem;
+			height: 100%;
+			display: block;
+			transition: background-color .5s ease;
+			
+			&::before {
+				position: absolute;
+				content: '';
+				width: 20px;
+				height: 20px;
+				left: 0;
+				top: 50%;
+				background-image: url('../img/plus.svg');	
+				transform: translateY(-50%);
+			}
+
+			@include respond(smaller) {
+	            letter-spacing: 2px;
+	            padding-left: 2rem;
+	            
+	            &::before {
+	            	display: none;
+	            }
+	        }
+
+	        @include respond(smallest) {
+	            letter-spacing: .5px;
+	            font-size: 1.6rem;
+	        }
+		}
+
+		&__content {
+			transition: all .5s ease;
+			max-height: 0;
+			opacity: .5;
+			overflow: hidden;
+			font-size: 1.8rem;
+			letter-spacing: 1px;
+			color: $color-black;
+			font-weight: 300;
+			padding-left: 4rem;
+		}
+
+		& input {
+			display: none;
+		}
+
+		& input:checked ~ &__content {
+			max-height: 20rem;
+			opacity: 1;
+			padding-bottom: 4rem;
+		} 
+
+		.hasHover & input:not(:checked) ~ &__title:hover {
+			background-color: rgba($color-coral, .5);
+		}
+
+		.hasHover & input:checked ~ &__title:hover {
+			background-color: rgba($color-secondary, .1);
+		}
+	}
+}
+
+

@@ -1,0 +1,119 @@
+.header {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    transition: all 1s ease;
+    
+    @include respond(small) {
+        display: none;
+    }
+
+    &__inner {
+        background-color: rgba(#01183f, .25);
+        box-shadow: 0 4rem 10rem 6rem rgba(#01183f, .25);
+        display: flex;
+        justify-content: space-between;
+        height: 8rem;
+        padding-left: 4rem;
+        border-bottom: 1px solid rgba($color-white, .4); 
+        position: relative;
+    }
+
+    &__link {
+        display: inline-block;
+        font-size: 1.6rem;
+        letter-spacing: 1px;
+        line-height: 6rem;
+        text-transform: uppercase;
+        padding-left: 1.2rem;
+        padding-right: 1.2rem;
+        transition: background-color .2s ease;
+        position: relative;
+        
+        & a {
+            height: 100%;
+            display: block;
+            padding: 1rem;
+        }       
+    }
+    
+    &__logo {
+        font-size: 3rem;
+        line-height: 7.6rem;
+        text-transform: uppercase;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 100%;
+        transition: color .2s ease;
+        
+        .hasHover &:hover {
+            color: $color-coral;
+        }
+    }
+
+    &__tools {
+        display: inline-flex;
+    }
+
+    &__tool {
+        display: block;
+        font-size: 1.6rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        padding-left: 3rem;
+        padding-right: 3rem;
+        line-height: 6rem;
+        height: 100%;
+        font-family: inherit;
+        border-left: 1px solid rgba($color-white, .4);
+        transition: background-color .2s ease;
+        position: relative;
+    }
+
+    &__okular {
+        width: 20px;
+        height: 20px;
+        transform: translateY(3px);
+    }
+
+    .hasHover &__link:hover,
+    .hasHover &__tool:hover {
+        background-color: rgba($color-coral, .8);
+        
+        &::after {
+            width: 100%;
+            left: 0;
+            transform: scaleX(.75);
+        }
+    }
+
+    &__link:active,
+    &__tool:active {
+        &::after {
+            transform: scaleX(0);
+        }
+    }
+
+    &__link::after,
+    &__tool::after {
+        position: absolute;
+        content: '';
+        left: 50%;
+        top: 50%;
+        width: 0;
+        height: 2px;
+        background-color: #9cb891;
+        transition: all .8s ease;
+    }
+}
+
+.header--filled {
+    background-image: linear-gradient(
+        to bottom,
+        rgba($color-whitely, 1),
+        rgba($color-secondary, .6));
+}
+

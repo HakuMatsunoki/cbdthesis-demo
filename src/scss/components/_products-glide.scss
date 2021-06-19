@@ -1,0 +1,90 @@
+	.products__glide {
+	&__inner {
+		text-align: center;
+		padding-top: 4rem;
+		border: 1px solid #ced6af;
+		background-color: $color-white;
+	}
+
+	&__heading {
+		font-size: 1.8rem;
+		letter-spacing: 3px;
+		line-height: 1.8rem;
+		color: $color-dark;
+		font-weight: 400;
+		text-transform: uppercase;
+		margin-top: 1.5rem;
+		
+		@include respond(small) {
+            line-height: 2.6rem;
+        }
+	}	
+
+	&__image {
+		height: 34rem;
+		width: 100%;
+		position: relative;
+		
+		& img {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			height: 75%;
+		}
+	}
+
+	&__footer {
+		height: 7.4rem;
+		background-color: #f1f1f1;
+		border: 1px solid #e1e1e1;
+		border-top: none;
+		position: relative;
+	}
+
+	&__price {
+		font-size: 1.8rem;
+		letter-spacing: 3px;
+		line-height: 7.5rem;
+		color: $color-dark;
+		font-weight: 400;
+		text-transform: uppercase;
+		padding-left: 3rem;
+	}
+	
+	&__btn {
+		position: absolute;
+		right: 0;
+		top: 0;
+		height: 100%;
+		width: 19rem;
+		background-color: $color-secondary;
+		border: $color-secondary;
+	}
+
+	&__arrows {
+		text-align: center;
+	}
+
+	&__arrow {
+		margin: 6rem 3rem;
+		
+		& img {
+			width: 40px;
+			height: 22px;
+			transition: transform .25s ease-out;
+		}
+
+		.hasHover &--left:hover img {
+			transform: translateX(-1rem);
+		}
+
+		&--right {
+			transform: translateY(-1px);
+			
+			.hasHover &:hover img {
+				transform: translateX(1rem);
+			}
+		}
+	}
+}

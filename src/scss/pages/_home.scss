@@ -1,0 +1,185 @@
+.intro {
+    background-image: url('../img/01_intro-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    min-height: 100vh;
+    color: $color-whitely;
+    padding-top: 30rem;
+    padding-bottom: 10rem;
+    text-align: right;
+    position: relative;
+    
+    @include respond(small-land) {
+        padding-top: 20rem;
+    }
+
+    &__content {
+        @include respond(large) {
+            @include small-padding;
+        }
+    }
+    
+    &__link {
+        display: inline-block;
+        font-size: 1.8rem;
+        letter-spacing: 5px;
+        line-height: 2rem;
+        margin-top: 3rem;
+        font-weight: 300;
+        transition: transform .3s ease;
+        
+        .hasHover &:hover {
+            transform: translateX(1rem);
+        }
+    }
+
+    &__vertical {
+        font-size: 2.6rem;
+        letter-spacing: 2px;
+        line-height: 5.5rem;
+        color: $color-white;
+        text-transform: uppercase;
+        position: absolute;
+        bottom: 15.5rem;
+        left: -10rem;
+        padding-left: 13rem;
+        transform: rotate(270deg);
+    
+        &::after {
+            content: '';
+            background-color: $color-whitely;
+            position: absolute;
+            width: 10rem;
+            height: 2px;
+            left: 0;
+            top: 50%;
+        }
+
+        @include respond(smaller) {
+            display: none;
+        }
+    }
+
+    &__down {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 6rem;
+        perspective: 10rem;
+        
+        .hasHover &:hover img {
+            animation: none;
+        }
+        
+        & img {
+            animation: rotate 2s linear;
+            animation-iteration-count: infinite;
+        }
+    }
+}
+
+.about {
+    @include respond(large) {
+        @include small-padding;
+    }
+
+    @include respond(small-port) {
+        .row {
+            flex-wrap: wrap;
+        }
+
+        .col-1-of-2 {
+            width: 100%;
+        }
+    }
+
+    &__logos { 
+        @include centered;
+        margin-top: 10rem;
+    }
+
+    &__tab-box {
+        margin-top: 11rem;
+        margin-bottom: 4rem;
+    }
+
+    &__tab {
+        transform: translateX(calc(((100% - 11 * #{$gutter-horizontal}) / 12) + #{$gutter-horizontal}));
+        
+        @include respond(big) {
+            transform: translateX(0);
+        }
+    }
+}
+
+.products {
+    padding-top: 10rem;
+    
+    &__heading {
+        text-align: center;
+        margin-bottom: 8rem;
+    }
+}
+
+.questions {
+    padding-top: 8rem;
+    padding-bottom: 15rem;
+    
+    &__heading {
+        text-align: center;
+        margin-bottom: 5rem;
+    }
+}
+
+.testimonials {
+    background-image: url(../img/10_testimonials-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    position: relative;
+    
+    
+    &__review {
+        max-width: 80rem;
+        @include centered;
+        padding-top: 3rem;
+        padding-bottom: 2.5rem;
+        
+        @include respond(small) {
+            @include small-padding;
+        }
+    }
+
+    &__author {
+        position: relative;
+        display: inline-block;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -6rem;
+            height: 2px;
+            width: 4.5rem;
+            background-color: $color-whitely;
+            transform: translateY(-50%);
+        }
+    }
+
+    &__vertical {
+        position: absolute;
+        text-transform: uppercase;
+        font-size: 2.4rem;
+        letter-spacing: .7rem;
+        line-height: 6rem;
+        color: $color-whitely;
+        font-weight: 300;
+        left: -3rem;
+        bottom: 13rem;
+        transform: rotate(90deg);
+        
+        @include respond(small) {
+           display: none;
+        }
+    }
+}
